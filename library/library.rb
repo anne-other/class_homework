@@ -32,4 +32,10 @@ def add_book(title)
     @books << new_book
 end
 
+def change_rental_info(title, student, due_date)
+    book = book_info(title)
+    book[:rental_details][:student_name] = student
+    book[:rental_details][:date] = due_date
+end
+
 end

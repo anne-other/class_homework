@@ -55,4 +55,17 @@ class TestLibrary < MiniTest::Test
     assert_equal(4, result.size)
   end
 
+  def test_change_rental_info()
+    @library.change_rental_info("The Lord Of The Rings", "Samwise", "3434 of the second age")
+    result = @library.book_info("The Lord Of The Rings")
+    compare = {
+      title: "The Lord Of The Rings",
+      rental_details: {
+        student_name: "Samwise",
+        date: "3434 of the second age"
+      }
+    }
+    assert_equal(compare , result)
+  end
+
 end
