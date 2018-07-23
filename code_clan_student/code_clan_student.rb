@@ -25,4 +25,8 @@ class Student
     return words.to_s
   end
 
+  def say_favourite_language(language)
+    return say("I love #{language}")
+  end
+
 end
