@@ -49,4 +49,10 @@ class TestLibrary < MiniTest::Test
     assert_equal(compare, result)
   end
 
+  def test_add_book()
+    @library.add_book("Prince Of Thorns")
+    result = @library.books
+    assert_equal(4, result.size)
+  end
+
 end
