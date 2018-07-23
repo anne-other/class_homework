@@ -7,7 +7,7 @@ class TestLibrary < MiniTest::Test
 
   def setup()
 
-    books = [{
+    @books = [{
       title: "The Lord Of The Rings",
       rental_details: {
         student_name: "Jeff",
@@ -30,12 +30,17 @@ class TestLibrary < MiniTest::Test
         }
     ]
 
-    @library = Library.new(books)
+    @library = Library.new(@books)
   end
 
   def test_get_books
     result = @library.books()
     assert_equal(3, result.size)
+  end
+
+  def test_book_info
+    result = @library.book_info("The Lord Of The Rings")
+    assert_equal(@books[0], result)
   end
 
 end
