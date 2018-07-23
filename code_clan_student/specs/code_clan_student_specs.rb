@@ -9,9 +9,9 @@ class TestStudent < MiniTest::Test
     @student1 = Student.new("Anne", "G7")
   end
 
-  # def test_student_name
-  #   result = @student1.name()
-  #   assert_equal("Anne", result)
-  # end
+  def test_student_name
+    result = @student1.name()
+    assert_equal("Anne", result)
+  end
 
 end

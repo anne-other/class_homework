@@ -5,8 +5,8 @@ class Student
     @cohort = cohort
   end
 
-  # def name()
-  #   return @name
-  # end
+  def name()
+    return @name
+  end
 
 end
