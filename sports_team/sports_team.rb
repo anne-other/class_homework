@@ -29,4 +29,8 @@ class Team
     @players << player
   end
 
+  def find_player(player)
+    @players.include?(player)
+  end
+
 end

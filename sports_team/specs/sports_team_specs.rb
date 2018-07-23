@@ -34,4 +34,9 @@ class TestSportsTeam < MiniTest::Test
     assert_equal(5, result.size)
   end
 
+  def test_find_player_true()
+    result = @team1.find_player("Richie Gray")
+    assert_equal(true, result)
+  end
+
 end
