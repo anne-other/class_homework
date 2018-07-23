@@ -18,4 +18,8 @@ class TestSportsTeam < MiniTest::Test
     assert_equal(4, result.size)
   end
 
+  def test_get_coach()
+    assert_equal("Vern Cotter", @team1.coach())
+  end
+
 end
