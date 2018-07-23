@@ -6,8 +6,11 @@ require_relative('../sports_team.rb')
 class TestSportsTeam < MiniTest::Test
 
   def setup
-
+    @team1 = Team.new("Scotland", ["Greg Laidlaw", "Richie Gray", "Sean Lamont", "Stuart Hogg"], "Vern Cotter")
   end
 
+  def test_get_team_name()
+    assert_equal("Scotland", @team1.name)
+  end
 
 end

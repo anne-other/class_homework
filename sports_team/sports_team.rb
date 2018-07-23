@@ -6,4 +6,8 @@ class Team
     @coach = coach
   end
 
+  def name()
+    return @name
+  end
+
 end
