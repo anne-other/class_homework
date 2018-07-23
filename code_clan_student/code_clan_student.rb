@@ -21,4 +21,8 @@ class Student
     @cohort = cohort
   end
 
+  def say(words)
+    return words.to_s
+  end
+
 end
