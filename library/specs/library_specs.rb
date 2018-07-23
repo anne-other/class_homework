@@ -33,4 +33,9 @@ class TestLibrary < MiniTest::Test
     @library = Library.new(books)
   end
 
+  def test_get_books
+    result = @library.books()
+    assert_equal(3, result.size)
+  end
+
 end
