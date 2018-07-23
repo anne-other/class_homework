@@ -13,4 +13,9 @@ class TestSportsTeam < MiniTest::Test
     assert_equal("Scotland", @team1.name)
   end
 
+  def test_get_players()
+    result = @team1.players
+    assert_equal(4, result.size)
+  end
+
 end
