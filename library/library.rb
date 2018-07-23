@@ -16,4 +16,9 @@ def book_info(title)
   end
 end
 
+def rental_info(title)
+  book = book_info(title)
+  return book[:rental_details]
+end
+
 end

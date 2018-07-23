@@ -33,14 +33,20 @@ class TestLibrary < MiniTest::Test
     @library = Library.new(@books)
   end
 
-  def test_get_books
+  def test_get_books()
     result = @library.books()
     assert_equal(3, result.size)
   end
 
-  def test_book_info
+  def test_book_info()
     result = @library.book_info("The Lord Of The Rings")
     assert_equal(@books[0], result)
+  end
+
+  def test_rental_info()
+    result = @library.rental_info("A Song Of Ice And Fire")
+    compare = @books[1][:rental_details]
+    assert_equal(compare, result)
   end
 
 end
