@@ -7,7 +7,8 @@ class TestLibrary < MiniTest::Test
 
   def setup()
 
-    @books = [{
+    @books = [
+      {
       title: "The Lord Of The Rings",
       rental_details: {
         student_name: "Jeff",
@@ -30,7 +31,21 @@ class TestLibrary < MiniTest::Test
         }
     ]
 
-    @library = Library.new(@books)
+    @library = Library.new(@books)#()
+    #@library.add_book(@book)
+  end
+
+  def test_add_book
+    book2 = {
+      title: "The Hobbit",
+      rental_details: {
+        student_name: "Jeff",
+        date: "01/12/18"
+      }
+    }
+    @library.add_book(book2)
+    result = @library.books
+    assert_equal(4, result.size)
   end
 
   def test_get_books()
@@ -49,10 +64,20 @@ class TestLibrary < MiniTest::Test
     assert_equal(compare, result)
   end
 
-  def test_add_book()
-    @library.add_book("Prince Of Thorns")
-    result = @library.books
-    assert_equal(4, result.size)
+  def test_add_book_by_title()
+    @library.add_book_by_title("Prince Of Thorns")
+    expected_book = {
+      title: "Prince Of Thorns",
+      rental_details: {
+        student_name: "",
+        date: ""
+      }
+    }
+
+    actual_book = @library.book_info("Prince Of Thorns")
+    assert_equal(expected_book, actual_book)
+    # result = @library.books
+    # assert_equal(4, result.size) doesn't test that the book is added as expected with relevant information
   end
 
   def test_change_rental_info()

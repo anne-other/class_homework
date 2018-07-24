@@ -31,11 +31,12 @@ class Team
   end
 
   def find_player(player)
-    @players.include?(player)
+    return @players.include?(player)
   end
 
   def points_update(result)
     if result == "win"
+      #result == true use boolean where you can
       @points += 1
     end
   end

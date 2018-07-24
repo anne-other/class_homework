@@ -46,6 +46,7 @@ class TestSportsTeam < MiniTest::Test
 
   def test_points_update()
     @team1.points_update("win")
+    #@team.has_won(true) use a boolean where you can
     assert_equal(1, @team1.points)
   end
 
